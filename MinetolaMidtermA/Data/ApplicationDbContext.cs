@@ -9,5 +9,6 @@ namespace MinetolaMidtermA.Data
             : base(options)
         {
         }
+        public DbSet<MinetolaMidtermA.Models.Team> Team { get; set; } = default!;
     }
 }
