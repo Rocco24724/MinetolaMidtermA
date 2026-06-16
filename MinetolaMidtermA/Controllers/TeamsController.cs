@@ -18,5 +18,6 @@ namespace MinetolaMidtermA.Controllers
             var teams = await _context.Team.ToListAsync();
             return View(teams);
         }
+
     }
 }
