@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MinetolaMidtermA.Models.Team>
+
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<h1>Teams</h1>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    }
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Teamid)</th>
+            <th>@Html.DisplayNameFor(model => model.Country)</th>
+            <th>@Html.DisplayNameFor(model => model.Group)</th>
+            <th>@Html.DisplayNameFor(model => model.Ranking)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstMatch)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Teamid</td>
+                <td>@item.Country</td>
+                <td>@item.Group</td>
+                <td>@item.Ranking</td>
+                <td>@item.FirstMatch.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
