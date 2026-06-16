@@ -1,0 +1,37 @@
+﻿@model MinetolaMidtermA.Models.Team
+
+@{
+    ViewData["Title"] = "Create Team";
+}
+
+<h1>Create Team</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Country" class="form-label"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Group" class="form-label"></label>
+        <input asp-for="Group" class="form-control" />
+        <span asp-validation-for="Group" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ranking" class="form-label"></label>
+        <input asp-for="Ranking" class="form-control" type="number" />
+        <span asp-validation-for="Ranking" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="FirstMatch" class="form-label"></label>
+        <input asp-for="FirstMatch" class="form-control" type="date" />
+        <span asp-validation-for="FirstMatch" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to list</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
